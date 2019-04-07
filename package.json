@@ -9,12 +9,17 @@
     "@stryker-mutator/javascript-mutator": "^1.1.1",
     "@stryker-mutator/jest-runner": "^1.1.1",
     "jest": "^24.1.0",
-    "stryker-cli": "^1.0.0"
+    "stryker-cli": "^1.0.0",
+    "webpack": "^4.29.6",
+    "webpack-cli": "^3.3.0"
   },
   "scripts": {
+    "build": "webpack --config webpack.config.js",
+    "watch": "webpack --config webpack.config.js --watch",
     "unit.test": "jest",
     "unit.test.coverage": "jest --coverage",
-    "unit.test.mutation": "stryker run"
+    "unit.test.mutation": "stryker run",
+    "mountebank.start": "mb --logfile=./tmp/mb.log --pidfile=./tmp/mb.pid --configfile=test/mock/imposters.ejs --allowInjection --loglevel=debug"
   },
   "jest": {
     "verbose": true,
@@ -30,5 +35,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "mountebank": "^2.0.0"
   }
 }

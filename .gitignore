@@ -4,3 +4,5 @@ package-lock.json
 coverage
 npm-debug.log
 reports
+tmp
+dist
