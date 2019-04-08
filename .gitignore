@@ -4,5 +4,6 @@ package-lock.json
 coverage
 npm-debug.log
 reports
-tmp
+tmp/mb*
 dist
+tests/ui/videos

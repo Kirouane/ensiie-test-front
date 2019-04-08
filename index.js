@@ -1,7 +1,10 @@
+const appConfig = require('./app.config');
 const JetpackService = require('./src/Service/Api/JetpackApi');
 const HttpClient = require('./src/HttpClient');
-const httpClient = new HttpClient('http://localhost:4545');
+
+const httpClient = new HttpClient(appConfig.apiUrl);
 const jetpackService = new JetpackService(httpClient);
+
 
 jetpackService.getJetpacks().then(jetpacks => {
     let html =  '';
