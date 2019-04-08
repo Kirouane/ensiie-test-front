@@ -4,14 +4,18 @@ const httpClient = new HttpClient('http://localhost:4545');
 const jetpackService = new JetpackService(httpClient);
 
 jetpackService.getJetpacks().then(jetpacks => {
-    let html = '';
+    let html =  '';
     jetpacks.forEach((jetpack) => {
-        html += '<div>' +
-            '<img src="' + jetpack.image + '" style="width: 300px"/>' +
-            jetpack.name
-            '</div>';
+        html +=
+            '<div class="card" style="width: 18rem;">\n' +
+            '  <img src="'+ jetpack.image +'" class="card-img-top" alt="...">\n' +
+            '  <div class="card-body">\n' +
+            '    <h5 class="card-title">' + jetpack.name + '</h5>\n' +
+            '    <a href="#" class="btn btn-primary">Edit</a>\n' +
+            '  </div>\n' +
+            '</div>'
 
-    })
+    });
 
     document.getElementById('jetpacks').innerHTML = html;
 });
