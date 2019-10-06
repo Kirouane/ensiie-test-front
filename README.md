@@ -11,6 +11,8 @@
 #Mock
 `npm run mountebank.start`
 
+#start
+`npm run start`
 
 #Test
 
@@ -21,4 +23,5 @@
 ## Mutation tests
 `npm run unit.test.mutation`
 ## UI tests
-`npm run ui.test`
+`npm run ui.test` to run all tests
+`npm run ui.open` to open Cypress 
